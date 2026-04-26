@@ -1,1 +1,6 @@
-git clone https://github.com/Hajtol/PROJEKT_HRA_HAJTOL.git
+#include <iostream>
+
+int main() {
+    std::cout << "Ahoj, moje hra funguje!" << std::endl;
+    return 0;
+}
