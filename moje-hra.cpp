@@ -84,4 +84,45 @@ int main() {
         
         cout << "\nAle pozor! V krovi susti dalsi monstrum..." << endl;
    
-    }
+    // SOUBOJ SE DVĚMA MONSTRY 
+        int vlk1_HP = 10;
+        int vlk2_HP = 10;
+        cout << "Vyskocili na tebe dva vlci najednou!" << endl;
+
+        while ((vlk1_HP > 0 || vlk2_HP > 0) && hp > 0) {
+            cout << "\nNa koho zautocis? 1 - Prvni vlk (" << vlk1_HP << " HP), 2 - Druhy vlk (" << vlk2_HP << " HP)" << endl;
+            cin >> volba;
+
+            if (volba == 1 && vlk1_HP > 0) {
+                vlk1_HP = vlk1_HP - utok;
+                cout << "Zasahneš prvního vlka!" << endl;
+            } else if (volba == 2 && vlk2_HP > 0) {
+                vlk2_HP = vlk2_HP - utok;
+                cout << "Zasáhneš druhého vlka!" << endl;
+            } else {
+                cout << "Ten uz je mrtvy nebo jsi minul!" << endl;
+            }
+
+            if (vlk1_HP > 0) {
+                cout << "Prvni vlk te kousl za 2 HP!" << endl;
+                hp = hp - 2;
+            }
+            if (vlk2_HP > 0) {
+                cout << "Druhy vlk te kousl za 2 HP!" << endl;
+                hp = hp - 2;
+            }
+            cout << "Tvoje zbyvajici HP: " << hp << endl;
+        }
+
+        if (hp > 0) {
+            cout << "\nZvladl jsi to! Oba vlci jsou pryc." << endl;
+            zlato = zlato + 20;
+            cout << "Nasel jsi u nich 20 zlata. Celkem mas: " << zlato << endl;
+            cout << "Ted se musis pripravit na neco mnohem vetsiho..." << endl;
+        } else {
+            cout << "\nVlci te roztrhali. Hra končí." << endl;
+        }
+    } 
+
+    return 0;
+}
